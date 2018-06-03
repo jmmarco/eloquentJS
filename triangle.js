@@ -1,9 +1,9 @@
 // Looping a triangle
 
-s =  'program'; // Program has a length of 7
-h = '#';
 
-for (var i = 0; i < s.length; i++) {
+var h = '#';
+
+for (var i = 0; i < 7 i++) {
 	console.log(h);
 	h += '#';
 }
