@@ -1,23 +1,16 @@
+let blank = " ",
+  board = "";
+  hash = "#",
+  size = 8;
 
-let size = 10;
-
-for (let i = 1; i <= size; i++) {
-  var line  = ''
-  if (i % 2 == 0) {
-    for (let j = 1; j <= size; j++) {
-      if (j % 2 == 0)
-        line += '#'
-      else
-        line += ' '
+for (let i = 0; i < size; i++) {
+  for (let j = 0; j < size; j++) {
+    if ((i + j) % 2 === 0) {
+      board += blank;
+    } else {
+      board += hash;
     }
-  } else {
-      for (let j = 1; j <= size; j++) {
-        if (j % 2 == 0)
-          line += ' '
-        else
-          line += '#'
-      }
   }
-
-  console.log(line)
+  board += "\n";
 }
+console.log(board)
