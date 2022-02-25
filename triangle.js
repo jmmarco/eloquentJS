@@ -1,9 +1,6 @@
 // Looping a triangle
-
-
-var h = '#';
-
-for (var i = 0; i < 7 i++) {
-	console.log(h);
-	h += '#';
+let hash = '#';
+for (var i = 0; i < 7; i++) {
+	console.log(hash);
+	hash += '#';
 }
