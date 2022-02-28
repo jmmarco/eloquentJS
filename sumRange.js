@@ -1,16 +1,21 @@
 function range(start, end, step = 1) {
-  let resultArr = [],
-    currentNumber = start;
+  let resultArr = [];
 
-  while (currentNumber <= end) {
-    resultArr.push(currentNumber);
-    currentNumber += step;
+  if (start > end) {
+    if (step > 0) step *= -1;
+    while (start >= end) {
+      resultArr.push(start);
+      start += step;
+    }
+  } else {
+    while (start <= end) {
+      resultArr.push(start);
+      start += step;
+    }
   }
+
   return resultArr;
 }
-
-// console.log(range(0, 10))
-// console.log(range(5,7))
 
 function sum(numbers) {
   let sum = 0;
@@ -23,5 +28,7 @@ function sum(numbers) {
   return sum;
 }
 
-console.log(range(1, 10));
-// → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(range(1, 10)); // → [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(range(5, 2, -1)); // → [5, 4, 3, 2]
+console.log(sum(range(1, 10))); // → 55
+console.log(range(5, 2)); // → [5, 4, 3, 2]
