@@ -1,22 +1,28 @@
-function reverseArrayInPlace(arr) {
+function reverseArrayInPlace(array) {
+  if (Array.isArray(array)) {
+    const middle = Math.round(array.length / 2) - 1;
+    for (let i = 0; i < middle; i++) {
+      // Grab the first and last element as we go
+      const first = array[i];
+      const last = array[array.length - 1 - i];
 
-  // Divide the array
-  let lengthOfArr = arr.length / 2
-
-  for (var i = 0; i < lengthOfArr; i++) {
-    // Grab the first and last element as we go
-    let first = arr[i]
-    let last = arr[arr.length - 1 - i]
-
-    // replace the first position with the last value and vice versa
-    arr[i] = last
-    arr[arr.length - 1 -i ] = first
-
+      // replace the first position with the last value and vice versa
+      array[i] = last;
+      array[array.length - 1 - i] = first;
+    }
   }
-
-  return arr
+  return array;
 }
 
-// console.log(reverseArrayInPlace( ["Bowie", "Gisela", "Juan"]) )
-console.log(reverseArrayInPlace( [1,2,3,4,5]) )
-// console.log(reverseArrayInPlace( ["Bowie", "Gisela"]) )
+console.log(
+  reverseArrayInPlace([
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+  ])
+);
+console.log(reverseArrayInPlace(["Bowie", "Gisela", "Felix"]));
