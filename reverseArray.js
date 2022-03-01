@@ -1,15 +1,12 @@
-function reverseArray (arr) {
-
-  // Create empty array
-  let resultArr = []
-
-  // Iterate backwards
-  for (let i = arr.length - 1; i >= 0 ; i--) {
-    // append each value to the new array
-    resultArr.push(arr[i])
+function reverseArray(array) {
+  const result = [];
+  if (Array.isArray(array)) {
+    for (let i = array.length - 1; i >= 0; i--) {
+      result.push(array[i]);
+    }
   }
-
-  return resultArr
+  return result;
 }
 
-console.log(reverseArray( [1,2,3,4,5]) )
+console.log(reverseArray(["apples", "bananas", "peaches"]));
+console.log(reverseArray([1, 2, 3, 4, 5]));
